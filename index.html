@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>v-for with an Object</title>
+
+        <!-- BOOTSTRAP 5.3.1 CSS CDN -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+            crossorigin="anonymous">
+
+        <!-- FONTAWESOME CDN -->
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+            integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    </head>
+    <body>
+
+        <div id="app">
+
+            <h1>OBJECT</h1>
+
+            <h3>You can use v-for to iterate through the properties of an
+                object.</h3>
+            <h5>v-for="value in object"</h5>
+            <div v-for="value in object">
+                VALUE: {{ value }}
+            </div>
+
+            <h3>You can also provide a second argument for the property’s name
+                (a.k.a. key):</h3>
+
+            <h5>v-for="(value, key) in object"</h5>
+            <div v-for="(value, key) in object">
+                KEY: {{ key }} / VALUE: {{ value }}
+            </div>
+
+            <h3>And another for the index:</h3>
+
+            <h5>v-for="(value, key, index) in object"</h5>
+            <div v-for="(value, key, index) in object">
+                INDEX: {{ index }} / KEY: {{ key }} / VALUE {{ value }}
+            </div>
+
+            <hr>
+
+            <h1>ARRAY OF OBJECTS</h1>
+
+            <div v-for="value in objectArr">
+                <h4>v-for="value in objectArr"</h4>
+                <p>{{value}}</p>
+
+                <h4>v-for="item in value">{{item}}</h4>
+                <div v-for="item in value">
+                    <p>ITEM: {{item}}</p>
+
+                </div>
+
+                <h4>v-for="(item, key ) in value"</h4>
+                <div v-for="(item, key) in value">
+                    <p>KEY: {{key}} / ITEM: {{item}}</p>
+
+                </div>
+
+                <h4>v-for="(item, key, index ) in value"</h4>
+                <div v-for="(item, key, index) in value">
+                    <p>INDEX: {{index}} / KEY: {{key}} / ITEM: {{item}}</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- VUE.JS 3 (OPTIONS) CDN -->
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+        <!-- BOOSTRAP 5.3.1 JS SCRIPTS BUNDLE CDN -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+            crossorigin="anonymous"></script>
+
+        <!-- JS SCRIPT LINK -->
+        <script type="text/javascript" src="./assets/js/app.js"></script>
+
+    </body>
+
+</html>
